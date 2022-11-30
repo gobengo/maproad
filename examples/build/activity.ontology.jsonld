@@ -1,0 +1,45 @@
+{
+   "_comments": "Auto generated from activity.ontology.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-11-29T23:09:24\n    Schema: activity\n    metamodel version: 1.7.0\n    model version: None\n    \n    id: https://bengo.is/ns/activity\n    description: \n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "@context": {
+      "activity": "https://bengo.is/ns/activity/",
+      "activitystreams": "https://www.w3.org/ns/activitystreams#",
+      "linkml": "https://w3id.org/linkml/",
+      "org": "https://www.w3.org/TR/vocab-org/#",
+      "schemaorg": "https://schema.org/",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "@vocab": "https://bengo.is/ns/activity/",
+      "id": "@id",
+      "content": {
+         "@id": "activitystreams:content"
+      },
+      "email": {
+         "@id": "https://bengo.is/ns/activity/email"
+      },
+      "endTime": {
+         "@id": "activitystreams:endTime"
+      },
+      "name": {
+         "@id": "activitystreams:name"
+      },
+      "startTime": {
+         "@id": "activitystreams:startTime"
+      },
+      "url": {
+         "@id": "activitystreams:url"
+      },
+      "projects": {
+         "@type": "@id",
+         "@id": "https://bengo.is/ns/activity/projects"
+      },
+      "type": {
+         "@id": "activitystreams:type"
+      },
+      "Project": {
+         "@id": "https://bengo.is/ns/activity/Project"
+      },
+      "Roadmap": {
+         "@id": "https://bengo.is/ns/activity/Roadmap"
+      }
+   }
+}
+

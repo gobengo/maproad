@@ -1,0 +1,101 @@
+{
+  "$defs": {
+    "Project": {
+      "additionalProperties": false,
+      "description": "",
+      "properties": {
+        "content": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "endTime": {
+          "type": "string"
+        },
+        "id": {
+          "description": "unique id",
+          "type": "string"
+        },
+        "name": {
+          "description": "a human-readable name of the object",
+          "type": "string"
+        },
+        "startTime": {
+          "type": "string"
+        },
+        "type": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "url"
+      ],
+      "title": "Project",
+      "type": "object"
+    },
+    "Roadmap": {
+      "additionalProperties": false,
+      "description": "",
+      "properties": {
+        "id": {
+          "description": "unique id",
+          "type": "string"
+        },
+        "projects": {
+          "items": {
+            "$ref": "#/$defs/Project"
+          },
+          "type": "array"
+        },
+        "type": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "title": "Roadmap",
+      "type": "object"
+    }
+  },
+  "$id": "https://bengo.is/ns/activity",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": true,
+  "metamodel_version": "1.7.0",
+  "properties": {
+    "id": {
+      "description": "unique id",
+      "type": "string"
+    },
+    "projects": {
+      "items": {
+        "$ref": "#/$defs/Project"
+      },
+      "type": "array"
+    },
+    "type": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "title": "activity",
+  "type": "object",
+  "version": null
+}

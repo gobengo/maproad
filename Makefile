@@ -1,19 +1,20 @@
 BUILD=build
 examples := $(wildcard examples/*.yaml)
-roadmapContainer := containers/roadmap.yaml
+roadmapContainer := roadmap.yaml
 activityOntology := names/activity.ontology.yaml
 $(OBJFILES) : Makefile
 
 MAKEFLAGS := --jobs=$(shell nproc)
 
 default: \
+	examples/build \
 	$(BUILD)/roadmap.rdf \
 	$(BUILD)/roadmap.ttl \
 	$(BUILD)/roadmap.yaml \
 	$(BUILD)/roadmap.json \
 	$(BUILD)/Activity.svg \
 	$(BUILD)/activity.ontology.schema.json \
-	$(BUILD)/activity.ontology.md \
+	$(BUILD)/markdown/* \
 	$(BUILD)/activity.ontology.owl.ttl \
 	$(BUILD)/activity.ontology.jsonld
 
@@ -50,8 +51,15 @@ $(BUILD)/activity.ontology.owl.ttl: $(BUILD) $(activityOntology)
 $(BUILD)/activity.ontology.jsonld: $(BUILD) $(activityOntology)
 	gen-jsonld-context $(activityOntology) > $@
 
-$(BUILD)/activity.ontology.md: $(BUILD) $(activityOntology)
-	gen-markdown -i -d $(BUILD)/markdown $(activityOntology)
+$(BUILD)/markdown/%: $(activityOntology)
+	gen-markdown -i -d $(BUILD)/markdown/ $(activityOntology)
+	touch $@
+
+examples/build: $(activityOntology) $(roadmapContainer) $(BUILD)
+	$(MAKE) build/*
+	rm -rf examples/build
+	mkdir -p examples/build
+	cp -a $(BUILD)/* examples/build/
 
 clean:
 	@ rm -rf $(BUILD)
