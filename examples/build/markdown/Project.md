@@ -31,8 +31,8 @@ URI: [https://bengo.is/ns/activity/Project](https://bengo.is/ns/activity/Project
  * [➞content](project__content.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
  * [➞startTime](project__startTime.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
+     * Range: [Datetime](types/Datetime.md)
  * [➞endTime](project__endTime.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
+     * Range: [Datetime](types/Datetime.md)
  * [➞email](project__email.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)

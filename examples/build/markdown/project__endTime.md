@@ -9,7 +9,7 @@ URI: [https://bengo.is/ns/activity/project__endTime](https://bengo.is/ns/activit
 
 ## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [String](types/String.md)
+None &#8594;  <sub>0..1</sub> [Datetime](types/Datetime.md)
 
 ## Parents
 

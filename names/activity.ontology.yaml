@@ -6,6 +6,8 @@ prefixes:
   activitystreams: https://www.w3.org/ns/activitystreams#
   org: https://www.w3.org/TR/vocab-org/#
   xsd: http://www.w3.org/2001/XMLSchema#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
 imports:
   - linkml:types
 default_range: string
@@ -31,9 +33,11 @@ classes:
       # https://www.w3.org/TR/activitystreams-vocabulary/#dfn-starttime
       startTime:
         slot_uri: activitystreams:startTime
+        range: datetime
       # https://www.w3.org/TR/activitystreams-vocabulary/#dfn-endtime
       endTime:
         slot_uri: activitystreams:endTime
+        range: datetime
       email: {}
   Roadmap:
     tree_root: true

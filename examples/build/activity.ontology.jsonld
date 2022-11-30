@@ -1,10 +1,12 @@
 {
-   "_comments": "Auto generated from activity.ontology.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-11-29T23:09:24\n    Schema: activity\n    metamodel version: 1.7.0\n    model version: None\n    \n    id: https://bengo.is/ns/activity\n    description: \n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from activity.ontology.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-11-29T23:24:54\n    Schema: activity\n    metamodel version: 1.7.0\n    model version: None\n    \n    id: https://bengo.is/ns/activity\n    description: \n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
       "activity": "https://bengo.is/ns/activity/",
       "activitystreams": "https://www.w3.org/ns/activitystreams#",
       "linkml": "https://w3id.org/linkml/",
       "org": "https://www.w3.org/TR/vocab-org/#",
+      "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
       "schemaorg": "https://schema.org/",
       "xsd": "http://www.w3.org/2001/XMLSchema#",
       "@vocab": "https://bengo.is/ns/activity/",
@@ -16,12 +18,14 @@
          "@id": "https://bengo.is/ns/activity/email"
       },
       "endTime": {
+         "@type": "xsd:dateTime",
          "@id": "activitystreams:endTime"
       },
       "name": {
          "@id": "activitystreams:name"
       },
       "startTime": {
+         "@type": "xsd:dateTime",
          "@id": "activitystreams:startTime"
       },
       "url": {
