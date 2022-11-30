@@ -18,20 +18,27 @@ classes:
     attributes:
       # https://www.w3.org/TR/activitystreams-vocabulary/#dfn-name
       name:
+        slot_uri: activitystreams:name
+        description: a human-readable name of the object
         required: true
       # https://www.w3.org/TR/activitystreams-vocabulary/#dfn-url
       url:
         required: true
+        slot_uri: activitystreams:url
       # https://www.w3.org/TR/activitystreams-vocabulary/#dfn-content
-      content: {}
+      content:
+        slot_uri: activitystreams:content
       # https://www.w3.org/TR/activitystreams-vocabulary/#dfn-starttime
-      startTime: {}
+      startTime:
+        slot_uri: activitystreams:startTime
       # https://www.w3.org/TR/activitystreams-vocabulary/#dfn-endtime
-      endTime: {}
+      endTime:
+        slot_uri: activitystreams:endTime
       email: {}
   Roadmap:
     tree_root: true
     slots:
+    - id
     - type
     attributes:
       projects:
@@ -47,6 +54,7 @@ classes:
 slots:
   # https://www.w3.org/TR/activitystreams-vocabulary/#dfn-id
   id:
+    description: unique id
     slot_uri: activitystreams:id
     identifier: true
     required: true
