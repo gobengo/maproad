@@ -1,0 +1,74 @@
+{
+  "$defs": {
+    "Project": {
+      "additionalProperties": false,
+      "description": "",
+      "properties": {
+        "content": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "endTime": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "startTime": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "title": "Project",
+      "type": "object"
+    },
+    "Roadmap": {
+      "additionalProperties": false,
+      "description": "",
+      "properties": {
+        "projects": {
+          "items": {
+            "$ref": "#/$defs/Project"
+          },
+          "type": "array"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "title": "Roadmap",
+      "type": "object"
+    }
+  },
+  "$id": "https://bengo.is/ns/activity",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": true,
+  "metamodel_version": "1.7.0",
+  "properties": {
+    "projects": {
+      "items": {
+        "$ref": "#/$defs/Project"
+      },
+      "type": "array"
+    },
+    "type": {
+      "type": "string"
+    }
+  },
+  "title": "activity",
+  "type": "object",
+  "version": null
+}

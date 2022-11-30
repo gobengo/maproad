@@ -14,7 +14,8 @@ classes:
     attributes:
       type: {} # "Project"
       # https://www.w3.org/TR/activitystreams-vocabulary/#dfn-id
-      id: {}
+      id:
+        identifier: true
       # https://www.w3.org/TR/activitystreams-vocabulary/#dfn-name
       name: {}
       # https://www.w3.org/TR/activitystreams-vocabulary/#dfn-url
