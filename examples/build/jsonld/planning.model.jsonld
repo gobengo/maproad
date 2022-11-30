@@ -445,7 +445,7 @@
   "source_file": "planning.model.yaml",
   "source_file_date": "2022-11-29T23:50:48",
   "source_file_size": 2031,
-  "generation_date": "2022-11-30T00:00:44",
+  "generation_date": "2022-11-30T00:02:42",
   "@type": "SchemaDefinition",
   "@context": [
     "build//jsonld/planning.model.context.jsonld",

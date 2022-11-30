@@ -11,30 +11,19 @@
             sh:minCount 1 ;
             sh:order 0 ;
             sh:path <https://bengo.is/ns/planning/:uuid> ],
-        [ sh:order 1 ;
-            sh:path activitystreams:type ],
         [ sh:class <https://bengo.is/ns/planning/:Project> ;
             sh:nodeKind sh:IRI ;
             sh:order 2 ;
-            sh:path <https://bengo.is/ns/planning/:projects> ] ;
+            sh:path <https://bengo.is/ns/planning/:projects> ],
+        [ sh:order 1 ;
+            sh:path activitystreams:type ] ;
     sh:targetClass <https://bengo.is/ns/planning/:Roadmap> .
 
 <https://bengo.is/ns/planning/:Project> a sh:NodeShape ;
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:maxCount 1 ;
-            sh:order 5 ;
-            sh:path activitystreams:startTime ],
-        [ sh:maxCount 1 ;
-            sh:order 7 ;
-            sh:path <https://bengo.is/ns/planning/:email> ],
-        [ sh:maxCount 1 ;
-            sh:order 4 ;
-            sh:path activitystreams:content ],
-        [ sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 3 ;
-            sh:path activitystreams:url ],
+    sh:property [ sh:order 1 ;
+            sh:path activitystreams:type ],
         [ sh:description "uuid" ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
@@ -48,7 +37,18 @@
             sh:minCount 1 ;
             sh:order 2 ;
             sh:path activitystreams:name ],
-        [ sh:order 1 ;
-            sh:path activitystreams:type ] ;
+        [ sh:maxCount 1 ;
+            sh:order 7 ;
+            sh:path <https://bengo.is/ns/planning/:email> ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 3 ;
+            sh:path activitystreams:url ],
+        [ sh:maxCount 1 ;
+            sh:order 5 ;
+            sh:path activitystreams:startTime ],
+        [ sh:maxCount 1 ;
+            sh:order 4 ;
+            sh:path activitystreams:content ] ;
     sh:targetClass <https://bengo.is/ns/planning/:Project> .
 
