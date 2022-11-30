@@ -4,7 +4,7 @@
 
 
 
-URI: [https://bengo.is/ns/activity/project__endTime](https://bengo.is/ns/activity/project__endTime)
+URI: [https://bengo.is/ns/planning/project__endTime](https://bengo.is/ns/planning/project__endTime)
 
 
 ## Domain and Range

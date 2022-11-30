@@ -4,7 +4,7 @@
 
 a human-readable name of the object
 
-URI: [https://bengo.is/ns/activity/project__name](https://bengo.is/ns/activity/project__name)
+URI: [https://bengo.is/ns/planning/project__name](https://bengo.is/ns/planning/project__name)
 
 
 ## Domain and Range

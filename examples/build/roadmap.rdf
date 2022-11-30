@@ -1,5 +1,5 @@
 @prefix activitystreams: <https://www.w3.org/ns/activitystreams#> .
-@prefix ns1: <https://bengo.is/ns/activity/:> .
+@prefix ns1: <https://bengo.is/ns/planning/:> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://github.com/ipfs/roadmap/issues/95> a ns1:Project ;

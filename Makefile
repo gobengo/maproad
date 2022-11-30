@@ -1,7 +1,7 @@
 BUILD=build
 examples := $(wildcard examples/*.yaml)
-roadmapContainer := roadmap.yaml
-activityOntology := names/activity.ontology.yaml
+roadmapContainer := ipfs.roadmap.yaml
+activityOntology := planning.model.yaml
 $(OBJFILES) : Makefile
 
 MAKEFLAGS := --jobs=$(shell nproc)
@@ -42,8 +42,8 @@ $(BUILD)/roadmap.jsonld: $(BUILD) $(roadmapContainer) $(activityOntology)
 	linkml-convert -t json-ld -s $(activityOntology) $(roadmapContainer) -o $@
 
 # svg diagram of activity ontology
-$(BUILD)/Activity.svg: $(BUILD) $(roadmapContainer) $(activityOntology)
-	gen-yuml names/activity.ontology.yaml -f svg -d build/   
+$(BUILD)/Activity.svg: $(BUILD) $(activityOntology)
+	gen-yuml $(activityOntology) -f svg -d build/   
 
 $(BUILD)/activity.ontology.schema.json: $(BUILD) $(activityOntology)
 	gen-json-schema $(activityOntology) | jq . > $@
@@ -69,7 +69,7 @@ $(BUILD)/activity.py: $(BUILD) $(activityOntology)
 $(BUILD)/markdown/%: $(activityOntology)
 	gen-markdown -i -d $(BUILD)/markdown/ $(activityOntology)
 
-examples/build: $(activityOntology) $(roadmapContainer) $(BUILD)
+examples/build: $(activityOntology) $(BUILD)
 	$(MAKE) build/*
 	rm -rf examples/build
 	mkdir -p examples/build

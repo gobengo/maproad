@@ -4,7 +4,7 @@
 
 
 
-URI: [https://bengo.is/ns/activity/roadmap__projects](https://bengo.is/ns/activity/roadmap__projects)
+URI: [https://bengo.is/ns/planning/roadmap__projects](https://bengo.is/ns/planning/roadmap__projects)
 
 
 ## Domain and Range

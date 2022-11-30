@@ -4,7 +4,7 @@
 
 unique id
 
-URI: [https://bengo.is/ns/activity/id](https://bengo.is/ns/activity/id)
+URI: [https://bengo.is/ns/planning/id](https://bengo.is/ns/planning/id)
 
 
 ## Domain and Range

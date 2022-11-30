@@ -4,7 +4,7 @@
 
 
 
-URI: [https://bengo.is/ns/activity/project__url](https://bengo.is/ns/activity/project__url)
+URI: [https://bengo.is/ns/planning/project__url](https://bengo.is/ns/planning/project__url)
 
 
 ## Domain and Range

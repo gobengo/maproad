@@ -1,8 +1,8 @@
-# Auto generated from activity.ontology.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-11-29T23:47:32
+# Auto generated from planning.model.yaml by pythongen.py version: 0.9.0
+# Generation date: 2022-11-29T23:51:03
 # Schema: activity
 #
-# id: https://bengo.is/ns/activity
+# id: https://bengo.is/ns/planning
 # description:
 # license: https://creativecommons.org/publicdomain/zero/1.0/
 
@@ -39,7 +39,7 @@ RDF = CurieNamespace('rdf', 'http://www.w3.org/1999/02/22-rdf-syntax-ns#')
 RDFS = CurieNamespace('rdfs', 'http://www.w3.org/2000/01/rdf-schema#')
 SCHEMAORG = CurieNamespace('schemaorg', 'https://schema.org/')
 XSD = CurieNamespace('xsd', 'http://www.w3.org/2001/XMLSchema#')
-DEFAULT_ = CurieNamespace('', 'https://bengo.is/ns/activity/')
+DEFAULT_ = CurieNamespace('', 'https://bengo.is/ns/planning/')
 
 
 # Types
@@ -53,10 +53,10 @@ class ProjectUrl(extended_str):
 class Project(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = URIRef("https://bengo.is/ns/activity/Project")
+    class_class_uri: ClassVar[URIRef] = URIRef("https://bengo.is/ns/planning/Project")
     class_class_curie: ClassVar[str] = None
     class_name: ClassVar[str] = "Project"
-    class_model_uri: ClassVar[URIRef] = URIRef("https://bengo.is/ns/activity/Project")
+    class_model_uri: ClassVar[URIRef] = URIRef("https://bengo.is/ns/planning/Project")
 
     url: Union[str, ProjectUrl] = None
     uuid: str = None
@@ -106,10 +106,10 @@ class Project(YAMLRoot):
 class Roadmap(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = URIRef("https://bengo.is/ns/activity/Roadmap")
+    class_class_uri: ClassVar[URIRef] = URIRef("https://bengo.is/ns/planning/Roadmap")
     class_class_curie: ClassVar[str] = None
     class_name: ClassVar[str] = "Roadmap"
-    class_model_uri: ClassVar[URIRef] = URIRef("https://bengo.is/ns/activity/Roadmap")
+    class_model_uri: ClassVar[URIRef] = URIRef("https://bengo.is/ns/planning/Roadmap")
 
     uuid: str = None
     type: Optional[Union[str, List[str]]] = empty_list()

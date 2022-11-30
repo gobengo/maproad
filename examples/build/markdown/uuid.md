@@ -4,7 +4,7 @@
 
 uuid
 
-URI: [https://bengo.is/ns/activity/uuid](https://bengo.is/ns/activity/uuid)
+URI: [https://bengo.is/ns/planning/uuid](https://bengo.is/ns/planning/uuid)
 
 
 ## Domain and Range
