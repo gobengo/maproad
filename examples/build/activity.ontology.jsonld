@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from activity.ontology.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-11-29T23:24:54\n    Schema: activity\n    metamodel version: 1.7.0\n    model version: None\n    \n    id: https://bengo.is/ns/activity\n    description: \n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from activity.ontology.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-11-29T23:30:32\n    Schema: activity\n    metamodel version: 1.7.0\n    model version: None\n    \n    id: https://bengo.is/ns/activity\n    description: \n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
       "activity": "https://bengo.is/ns/activity/",
       "activitystreams": "https://www.w3.org/ns/activitystreams#",
@@ -10,7 +10,9 @@
       "schemaorg": "https://schema.org/",
       "xsd": "http://www.w3.org/2001/XMLSchema#",
       "@vocab": "https://bengo.is/ns/activity/",
-      "id": "@id",
+      "id": {
+         "@id": "activitystreams:id"
+      },
       "content": {
          "@id": "activitystreams:content"
       },
@@ -28,15 +30,16 @@
          "@type": "xsd:dateTime",
          "@id": "activitystreams:startTime"
       },
-      "url": {
-         "@id": "activitystreams:url"
-      },
+      "url": "@id",
       "projects": {
          "@type": "@id",
          "@id": "https://bengo.is/ns/activity/projects"
       },
       "type": {
          "@id": "activitystreams:type"
+      },
+      "uuid": {
+         "@id": "https://bengo.is/ns/activity/uuid"
       },
       "Project": {
          "@id": "https://bengo.is/ns/activity/Project"

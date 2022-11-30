@@ -31,7 +31,7 @@
 <polygon fill='white' points='0,-164.5 0,-327.5 128,-327.5 128,-164.5 0,-164.5' stroke='black' style='fill:white;stroke:black;'/>
 <text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='64' y='-309.3'>Project</text>
 <polyline fill='none' points='0,-298.5 128,-298.5 ' stroke='black'/>
-<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='64' y='-280.3'>id:string</text>
+<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='64' y='-280.3'>uuid:string</text>
 <text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='64' y='-265.3'>type:string *</text>
 <text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='64' y='-250.3'>name:string</text>
 <text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='64' y='-235.3'>url:string</text>
@@ -43,7 +43,7 @@
 <polygon fill='white' points='22.5,-0.5 22.5,-73.5 105.5,-73.5 105.5,-0.5 22.5,-0.5' stroke='black' style='fill:white;stroke:black;'/>
 <text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='64' y='-55.3'>Roadmap</text>
 <polyline fill='none' points='22.5,-44.5 105.5,-44.5 ' stroke='black'/>
-<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='64' y='-26.3'>id:string</text>
+<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='64' y='-26.3'>uuid:string</text>
 <text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='64' y='-11.3'>type:string *</text>
 </g><g class='edge' id='edge1'><title>Project-&gt;Roadmap</title>
 <path d='M57.2964,-154.342C57.1247,-130.687 57.4296,-106.123 58.2112,-85.6959' fill='none' stroke='black'/>

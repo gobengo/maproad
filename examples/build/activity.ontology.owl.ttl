@@ -12,11 +12,11 @@
     IAO:0000700 <https://bengo.is/ns/activity/Project>,
         <https://bengo.is/ns/activity/Roadmap> ;
     dcterms:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
-    linkml:generation_date "2022-11-29T23:24:54" ;
+    linkml:generation_date "2022-11-29T23:30:32" ;
     linkml:metamodel_version "1.7.0" ;
     linkml:source_file "activity.ontology.yaml" ;
-    linkml:source_file_date "2022-11-29T23:17:36" ;
-    linkml:source_file_size 1974 .
+    linkml:source_file_date "2022-11-29T23:30:07" ;
+    linkml:source_file_size 2031 .
 
 linkml:SubsetDefinition a owl:Class ;
     rdfs:label "subset_definition" .
@@ -31,15 +31,15 @@ linkml:topValue a owl:DatatypeProperty ;
         linkml:ClassDefinition ;
     rdfs:label "Roadmap" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom <https://bengo.is/ns/activity/Project> ;
-            owl:onProperty <https://bengo.is/ns/activity/projects> ],
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty activitystreams:type ],
         [ a owl:Restriction ;
             owl:onClass linkml:String ;
-            owl:onProperty activitystreams:id ;
+            owl:onProperty <https://bengo.is/ns/activity/uuid> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty activitystreams:type ] .
+            owl:allValuesFrom <https://bengo.is/ns/activity/Project> ;
+            owl:onProperty <https://bengo.is/ns/activity/projects> ] .
 
 <https://bengo.is/ns/activity/email> a owl:ObjectProperty,
         linkml:SlotDefinition ;
@@ -50,6 +50,19 @@ linkml:topValue a owl:DatatypeProperty ;
         linkml:SlotDefinition ;
     rdfs:label "projects" ;
     rdfs:range <https://bengo.is/ns/activity/Project> .
+
+activitystreams:id a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "id" ;
+    rdfs:range linkml:String ;
+    skos:definition "unique id" ;
+    skos:exactMatch activitystreams:id .
+
+<https://bengo.is/ns/activity/uuid> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "uuid" ;
+    rdfs:range linkml:String ;
+    skos:definition "uuid" .
 
 linkml:ClassDefinition a owl:Class ;
     rdfs:label "class_definition" .
@@ -90,24 +103,20 @@ activitystreams:url a owl:ObjectProperty,
     rdfs:label "Project" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onClass linkml:String ;
+            owl:onProperty <https://bengo.is/ns/activity/uuid> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty activitystreams:name ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
             owl:onProperty activitystreams:url ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://bengo.is/ns/activity/email> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty activitystreams:content ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Datetime ;
             owl:onProperty activitystreams:endTime ],
-        [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty activitystreams:id ;
-            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Datetime ;
@@ -116,16 +125,13 @@ activitystreams:url a owl:ObjectProperty,
             owl:allValuesFrom linkml:String ;
             owl:onProperty activitystreams:type ],
         [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty activitystreams:name ;
-            owl:qualifiedCardinality 1 ] .
-
-activitystreams:id a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "id" ;
-    rdfs:range linkml:String ;
-    skos:definition "unique id" ;
-    skos:exactMatch activitystreams:id .
+            owl:onProperty activitystreams:content ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://bengo.is/ns/activity/email> ] .
 
 activitystreams:type a owl:ObjectProperty,
         linkml:SlotDefinition ;

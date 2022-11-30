@@ -53,7 +53,6 @@ $(BUILD)/activity.ontology.jsonld: $(BUILD) $(activityOntology)
 
 $(BUILD)/markdown/%: $(activityOntology)
 	gen-markdown -i -d $(BUILD)/markdown/ $(activityOntology)
-	touch $@
 
 examples/build: $(activityOntology) $(roadmapContainer) $(BUILD)
 	$(MAKE) build/*

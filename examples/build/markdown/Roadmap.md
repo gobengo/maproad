@@ -14,8 +14,8 @@ URI: [https://bengo.is/ns/activity/Roadmap](https://bengo.is/ns/activity/Roadmap
 
 ### Own
 
- * [id](id.md)  <sub>1..1</sub>
-     * Description: unique id
+ * [uuid](uuid.md)  <sub>1..1</sub>
+     * Description: uuid
      * Range: [String](types/String.md)
  * [type](type.md)  <sub>0..\*</sub>
      * Range: [String](types/String.md)

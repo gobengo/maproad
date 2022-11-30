@@ -34,7 +34,7 @@
 <polygon fill='white' points='0,-0.5 0,-163.5 128,-163.5 128,-0.5 0,-0.5' stroke='black' style='fill:white;stroke:black;'/>
 <text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='64' y='-145.3'>Project</text>
 <polyline fill='none' points='0,-134.5 128,-134.5 ' stroke='black'/>
-<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='64' y='-116.3'>id:string</text>
+<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='64' y='-116.3'>uuid:string</text>
 <text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='64' y='-101.3'>type:string *</text>
 <text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='64' y='-86.3'>name:string</text>
 <text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='64' y='-71.3'>url:string</text>

@@ -18,8 +18,8 @@ URI: [https://bengo.is/ns/activity/Project](https://bengo.is/ns/activity/Project
 
 ### Own
 
- * [id](id.md)  <sub>1..1</sub>
-     * Description: unique id
+ * [uuid](uuid.md)  <sub>1..1</sub>
+     * Description: uuid
      * Range: [String](types/String.md)
  * [type](type.md)  <sub>0..\*</sub>
      * Range: [String](types/String.md)

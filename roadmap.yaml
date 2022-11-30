@@ -1,26 +1,26 @@
-id: https://example.com/a2750017-a731-4d15-808a-7b777a106732
+uuid: a2750017-a731-4d15-808a-7b777a106732
 projects:
-- id: https://example.com/542e6538-1048-46e3-9eb2-1b0c29e96a97
+- uuid: 542e6538-1048-46e3-9eb2-1b0c29e96a97
   name: "Theme: Rich Application Support"
   url: https://github.com/ipfs/roadmap/issues/99
   startTime: "2022-01-01T00:00:00+00:00"
   endTime: "2022-02-01T00:00:00+00:00"
-- id: https://example.com/75a7c61b-d4b0-4ab7-a4d1-7ed5449a4de4
+- uuid: 75a7c61b-d4b0-4ab7-a4d1-7ed5449a4de4
   name: "Theme: Engineering Excellence"
   url: https://github.com/ipfs/roadmap/issues/98
   startTime: "2022-01-01T00:00:00+00:00"
   endTime: "2022-02-01T00:00:00+00:00"
-- id: https://example.com/754d369a-4d44-4ea8-b944-109e646985b0
+- uuid: 754d369a-4d44-4ea8-b944-109e646985b0
   name: "Theme: Privacy"
   url: https://github.com/ipfs/roadmap/issues/97
   startTime: "2022-01-01T00:00:00+00:00"
   endTime: "2022-02-01T00:00:00+00:00"
-- id: https://example.com/7df8e6e7-3591-4d7f-8455-896e47fe0eea
+- uuid: 7df8e6e7-3591-4d7f-8455-896e47fe0eea
   name: "Theme: Ubiquitous Clients/Implementations"
   url: https://github.com/ipfs/roadmap/issues/95
   startTime: "2022-01-01T00:00:00+00:00"
   endTime: "2022-02-01T00:00:00+00:00"
-- id: https://example.com/ba4d8ae1-6039-4ee8-ae3a-6a4d8b94d0a4
+- uuid: ba4d8ae1-6039-4ee8-ae3a-6a4d8b94d0a4
   name: "Theme: Content Routing Innovation"
   url: https://github.com/ipfs/roadmap/issues/96
   startTime: "2022-01-01T00:00:00+00:00"

@@ -15,7 +15,7 @@ classes:
   # https://www.w3.org/TR/vocab-org/#org:OrganizationalCollaboration
   Project:
     slots:
-    - id
+    - uuid
     - type
     attributes:
       # https://www.w3.org/TR/activitystreams-vocabulary/#dfn-name
@@ -27,6 +27,7 @@ classes:
       url:
         required: true
         slot_uri: activitystreams:url
+        identifier: true
       # https://www.w3.org/TR/activitystreams-vocabulary/#dfn-content
       content:
         slot_uri: activitystreams:content
@@ -42,7 +43,7 @@ classes:
   Roadmap:
     tree_root: true
     slots:
-    - id
+    - uuid
     - type
     attributes:
       projects:
@@ -60,7 +61,9 @@ slots:
   id:
     description: unique id
     slot_uri: activitystreams:id
-    identifier: true
+    required: true
+  uuid:
+    description: uuid
     required: true
   type:
     slot_uri: activitystreams:type

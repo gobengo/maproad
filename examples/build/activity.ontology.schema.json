@@ -14,10 +14,6 @@
           "format": "date-time",
           "type": "string"
         },
-        "id": {
-          "description": "unique id",
-          "type": "string"
-        },
         "name": {
           "description": "a human-readable name of the object",
           "type": "string"
@@ -34,10 +30,14 @@
         },
         "url": {
           "type": "string"
+        },
+        "uuid": {
+          "description": "uuid",
+          "type": "string"
         }
       },
       "required": [
-        "id",
+        "uuid",
         "name",
         "url"
       ],
@@ -48,10 +48,6 @@
       "additionalProperties": false,
       "description": "",
       "properties": {
-        "id": {
-          "description": "unique id",
-          "type": "string"
-        },
         "projects": {
           "items": {
             "$ref": "#/$defs/Project"
@@ -63,10 +59,14 @@
             "type": "string"
           },
           "type": "array"
+        },
+        "uuid": {
+          "description": "uuid",
+          "type": "string"
         }
       },
       "required": [
-        "id"
+        "uuid"
       ],
       "title": "Roadmap",
       "type": "object"
@@ -77,10 +77,6 @@
   "additionalProperties": true,
   "metamodel_version": "1.7.0",
   "properties": {
-    "id": {
-      "description": "unique id",
-      "type": "string"
-    },
     "projects": {
       "items": {
         "$ref": "#/$defs/Project"
@@ -92,10 +88,14 @@
         "type": "string"
       },
       "type": "array"
+    },
+    "uuid": {
+      "description": "uuid",
+      "type": "string"
     }
   },
   "required": [
-    "id"
+    "uuid"
   ],
   "title": "activity",
   "type": "object",
