@@ -1,0 +1,19 @@
+type Project
+  {
+    uuid: String!
+    type: [String]
+    name: String!
+    url: String!
+    content: String
+    startTime: Datetime
+    endTime: Datetime
+    email: String
+  }
+
+type Roadmap
+  {
+    uuid: String!
+    type: [String]
+    projects: [Project]
+  }
+

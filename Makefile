@@ -8,21 +8,14 @@ MAKEFLAGS := --jobs=$(shell nproc)
 
 default: \
 	examples/build \
-	$(BUILD)/roadmap.rdf \
-	$(BUILD)/roadmap.ttl \
-	$(BUILD)/roadmap.yaml \
-	$(BUILD)/roadmap.json \
-	$(BUILD)/Activity.svg \
-	$(BUILD)/planning.model.schema.json \
-	$(BUILD)/markdown/* \
-	$(BUILD)/planning.model.owl.ttl \
-	$(BUILD)/planning.model.jsonld \
-	$(BUILD)/planning.py \
-	$(BUILD)/planning.model.shex \
-	$(BUILD)/planning.model.shacl.ttl
+	$(BUILD)/*
 
 $(BUILD):
 	@ mkdir -p $(BUILD)
+
+$(BUILD)/*: $(BUILD) $(planningModel)
+	gen-project -d build/ planning.model.yaml
+	touch $@
 
 # build the roadmap as turtle
 $(BUILD)/roadmap.rdf: $(BUILD) $(roadmap) $(planningModel)

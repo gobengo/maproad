@@ -7,7 +7,7 @@
 URI: [https://bengo.is/ns/planning/Roadmap](https://bengo.is/ns/planning/Roadmap)
 
 
-[![img](images/Roadmap.svg)](images/Roadmap.svg)
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Project]<projects%200..*-++[Roadmap&#124;uuid:string;type:string%20*],[Project])](https://yuml.me/diagram/nofunky;dir:TB/class/[Project]<projects%200..*-++[Roadmap&#124;uuid:string;type:string%20*],[Project])
 
 ## Attributes
 

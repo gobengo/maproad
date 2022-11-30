@@ -1,0 +1,15 @@
+{
+   "activitystreams": "https://www.w3.org/ns/activitystreams#",
+   "linkml": "https://w3id.org/linkml/",
+   "org": "https://www.w3.org/TR/vocab-org/#",
+   "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+   "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+   "schemaorg": "https://schema.org/",
+   "xsd": "http://www.w3.org/2001/XMLSchema#",
+   "Project": {
+      "@id": "https://bengo.is/ns/planning/Project"
+   },
+   "Roadmap": {
+      "@id": "https://bengo.is/ns/planning/Roadmap"
+   }
+}

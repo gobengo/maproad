@@ -7,7 +7,7 @@
 URI: [https://bengo.is/ns/planning/Project](https://bengo.is/ns/planning/Project)
 
 
-[![img](images/Project.svg)](images/Project.svg)
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Roadmap]++-%20projects%200..*>[Project&#124;uuid:string;type:string%20*;name:string;url:string;content:string%20%3F;startTime:datetime%20%3F;endTime:datetime%20%3F;email:string%20%3F],[Roadmap])](https://yuml.me/diagram/nofunky;dir:TB/class/[Roadmap]++-%20projects%200..*>[Project&#124;uuid:string;type:string%20*;name:string;url:string;content:string%20%3F;startTime:datetime%20%3F;endTime:datetime%20%3F;email:string%20%3F],[Roadmap])
 
 ## Referenced by Class
 

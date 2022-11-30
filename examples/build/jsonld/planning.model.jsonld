@@ -1,0 +1,457 @@
+{
+  "name": "activity",
+  "id": "https://bengo.is/ns/planning",
+  "imports": [
+    "linkml:types"
+  ],
+  "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "prefixes": [
+    {
+      "prefix_prefix": "linkml",
+      "prefix_reference": "https://w3id.org/linkml/"
+    },
+    {
+      "prefix_prefix": "schemaorg",
+      "prefix_reference": "https://schema.org/"
+    },
+    {
+      "prefix_prefix": "activitystreams",
+      "prefix_reference": "https://www.w3.org/ns/activitystreams#"
+    },
+    {
+      "prefix_prefix": "org",
+      "prefix_reference": "https://www.w3.org/TR/vocab-org/#"
+    },
+    {
+      "prefix_prefix": "xsd",
+      "prefix_reference": "http://www.w3.org/2001/XMLSchema#"
+    },
+    {
+      "prefix_prefix": "rdfs",
+      "prefix_reference": "http://www.w3.org/2000/01/rdf-schema#"
+    },
+    {
+      "prefix_prefix": "rdf",
+      "prefix_reference": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    }
+  ],
+  "default_prefix": "https://bengo.is/ns/planning/",
+  "default_range": "string",
+  "types": [
+    {
+      "name": "string",
+      "definition_uri": "https://w3id.org/linkml/String",
+      "description": "A character string",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "integer",
+      "definition_uri": "https://w3id.org/linkml/Integer",
+      "description": "An integer",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "int",
+      "uri": "http://www.w3.org/2001/XMLSchema#integer",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "boolean",
+      "definition_uri": "https://w3id.org/linkml/Boolean",
+      "description": "A binary (true or false) value",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "Bool",
+      "uri": "http://www.w3.org/2001/XMLSchema#boolean",
+      "repr": "bool",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "float",
+      "definition_uri": "https://w3id.org/linkml/Float",
+      "description": "A real number that conforms to the xsd:float specification",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "float",
+      "uri": "http://www.w3.org/2001/XMLSchema#float",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "double",
+      "definition_uri": "https://w3id.org/linkml/Double",
+      "description": "A real number that conforms to the xsd:double specification",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "float",
+      "uri": "http://www.w3.org/2001/XMLSchema#double",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "decimal",
+      "definition_uri": "https://w3id.org/linkml/Decimal",
+      "description": "A real number with arbitrary precision that conforms to the xsd:decimal specification",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "Decimal",
+      "uri": "http://www.w3.org/2001/XMLSchema#decimal",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "time",
+      "definition_uri": "https://w3id.org/linkml/Time",
+      "description": "A time object represents a (local) time of day, independent of any particular day",
+      "notes": [
+        "URI is dateTime because OWL reasoners do not work with straight date or time"
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "XSDTime",
+      "uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "date",
+      "definition_uri": "https://w3id.org/linkml/Date",
+      "description": "a date (year, month and day) in an idealized calendar",
+      "notes": [
+        "URI is dateTime because OWL reasoners don't work with straight date or time"
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "XSDDate",
+      "uri": "http://www.w3.org/2001/XMLSchema#date",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "datetime",
+      "definition_uri": "https://w3id.org/linkml/Datetime",
+      "description": "The combination of a date and time",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "XSDDateTime",
+      "uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "date_or_datetime",
+      "definition_uri": "https://w3id.org/linkml/DateOrDatetime",
+      "description": "Either a date or a datetime",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "str",
+      "uri": "https://w3id.org/linkml/DateOrDatetime",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "uriorcurie",
+      "definition_uri": "https://w3id.org/linkml/Uriorcurie",
+      "description": "a URI or a CURIE",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "URIorCURIE",
+      "uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "uri",
+      "definition_uri": "https://w3id.org/linkml/Uri",
+      "description": "a complete URI",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "URI",
+      "uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "ncname",
+      "definition_uri": "https://w3id.org/linkml/Ncname",
+      "description": "Prefix part of CURIE",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "NCName",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "objectidentifier",
+      "definition_uri": "https://w3id.org/linkml/Objectidentifier",
+      "description": "A URI or CURIE that represents an object in the model.",
+      "comments": [
+        "Used for inheritence and type checking"
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "ElementIdentifier",
+      "uri": "http://www.w3.org/ns/shex#iri",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "nodeidentifier",
+      "definition_uri": "https://w3id.org/linkml/Nodeidentifier",
+      "description": "A URI, CURIE or BNODE that represents a node in a model.",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "NodeIdentifier",
+      "uri": "http://www.w3.org/ns/shex#nonLiteral",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    }
+  ],
+  "slots": [
+    {
+      "name": "id",
+      "definition_uri": "https://bengo.is/ns/planning/id",
+      "description": "unique id",
+      "from_schema": "https://bengo.is/ns/planning",
+      "mappings": [
+        "https://www.w3.org/ns/activitystreams#id"
+      ],
+      "slot_uri": "https://www.w3.org/ns/activitystreams#id",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "uuid",
+      "definition_uri": "https://bengo.is/ns/planning/uuid",
+      "description": "uuid",
+      "from_schema": "https://bengo.is/ns/planning",
+      "slot_uri": "https://bengo.is/ns/planning/uuid",
+      "owner": "Roadmap",
+      "domain_of": [
+        "Project",
+        "Roadmap"
+      ],
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "type",
+      "definition_uri": "https://bengo.is/ns/planning/type",
+      "from_schema": "https://bengo.is/ns/planning",
+      "mappings": [
+        "https://www.w3.org/ns/activitystreams#type"
+      ],
+      "slot_uri": "https://www.w3.org/ns/activitystreams#type",
+      "multivalued": true,
+      "owner": "Roadmap",
+      "domain_of": [
+        "Project",
+        "Roadmap"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "project__name",
+      "description": "a human-readable name of the object",
+      "from_schema": "https://bengo.is/ns/planning",
+      "mappings": [
+        "https://www.w3.org/ns/activitystreams#name"
+      ],
+      "slot_uri": "https://www.w3.org/ns/activitystreams#name",
+      "alias": "name",
+      "owner": "Project",
+      "domain_of": [
+        "Project"
+      ],
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "project__url",
+      "from_schema": "https://bengo.is/ns/planning",
+      "mappings": [
+        "https://www.w3.org/ns/activitystreams#url"
+      ],
+      "slot_uri": "https://www.w3.org/ns/activitystreams#url",
+      "identifier": true,
+      "alias": "url",
+      "owner": "Project",
+      "domain_of": [
+        "Project"
+      ],
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "project__content",
+      "from_schema": "https://bengo.is/ns/planning",
+      "mappings": [
+        "https://www.w3.org/ns/activitystreams#content"
+      ],
+      "slot_uri": "https://www.w3.org/ns/activitystreams#content",
+      "alias": "content",
+      "owner": "Project",
+      "domain_of": [
+        "Project"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "project__startTime",
+      "from_schema": "https://bengo.is/ns/planning",
+      "mappings": [
+        "https://www.w3.org/ns/activitystreams#startTime"
+      ],
+      "slot_uri": "https://www.w3.org/ns/activitystreams#startTime",
+      "alias": "startTime",
+      "owner": "Project",
+      "domain_of": [
+        "Project"
+      ],
+      "range": "datetime",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "project__endTime",
+      "from_schema": "https://bengo.is/ns/planning",
+      "mappings": [
+        "https://www.w3.org/ns/activitystreams#endTime"
+      ],
+      "slot_uri": "https://www.w3.org/ns/activitystreams#endTime",
+      "alias": "endTime",
+      "owner": "Project",
+      "domain_of": [
+        "Project"
+      ],
+      "range": "datetime",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "project__email",
+      "from_schema": "https://bengo.is/ns/planning",
+      "slot_uri": "https://bengo.is/ns/planning/email",
+      "alias": "email",
+      "owner": "Project",
+      "domain_of": [
+        "Project"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "roadmap__projects",
+      "from_schema": "https://bengo.is/ns/planning",
+      "slot_uri": "https://bengo.is/ns/planning/projects",
+      "multivalued": true,
+      "alias": "projects",
+      "owner": "Roadmap",
+      "domain_of": [
+        "Roadmap"
+      ],
+      "range": "Project",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    }
+  ],
+  "classes": [
+    {
+      "name": "Project",
+      "definition_uri": "https://bengo.is/ns/planning/Project",
+      "from_schema": "https://bengo.is/ns/planning",
+      "slots": [
+        "uuid",
+        "type",
+        "project__name",
+        "project__url",
+        "project__content",
+        "project__startTime",
+        "project__endTime",
+        "project__email"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "name",
+          "description": "a human-readable name of the object",
+          "slot_uri": "activitystreams:name",
+          "required": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "url",
+          "slot_uri": "activitystreams:url",
+          "identifier": true,
+          "required": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "content",
+          "slot_uri": "activitystreams:content",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "startTime",
+          "slot_uri": "activitystreams:startTime",
+          "range": "datetime",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "endTime",
+          "slot_uri": "activitystreams:endTime",
+          "range": "datetime",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "email",
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "https://bengo.is/ns/planning/Project",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Roadmap",
+      "definition_uri": "https://bengo.is/ns/planning/Roadmap",
+      "from_schema": "https://bengo.is/ns/planning",
+      "slots": [
+        "uuid",
+        "type",
+        "roadmap__projects"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "projects",
+          "multivalued": true,
+          "range": "Project",
+          "inlined_as_list": true,
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "https://bengo.is/ns/planning/Roadmap",
+      "tree_root": true,
+      "@type": "ClassDefinition"
+    }
+  ],
+  "metamodel_version": "1.7.0",
+  "source_file": "planning.model.yaml",
+  "source_file_date": "2022-11-29T23:50:48",
+  "source_file_size": 2031,
+  "generation_date": "2022-11-30T00:00:44",
+  "@type": "SchemaDefinition",
+  "@context": [
+    "build//jsonld/planning.model.context.jsonld",
+    "https://w3id.org/linkml/types.context.jsonld",
+    {
+      "@base": "https://bengo.is/ns/planning/"
+    }
+  ]
+}
