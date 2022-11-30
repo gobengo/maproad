@@ -1,0 +1,41 @@
+id: https://bengo.is/ns/activity
+name: activity
+prefixes:
+  linkml: https://w3id.org/linkml/
+  schemaorg: https://schema.org/
+  activitystreams: https://www.w3.org/ns/activitystreams#
+  org: https://www.w3.org/TR/vocab-org/#
+imports:
+  - linkml:types
+default_range: string
+classes:
+  # https://www.w3.org/TR/vocab-org/#org:OrganizationalCollaboration
+  Project:
+    attributes:
+      type: {} # "Project"
+      # https://www.w3.org/TR/activitystreams-vocabulary/#dfn-id
+      id: {}
+      # https://www.w3.org/TR/activitystreams-vocabulary/#dfn-name
+      name: {}
+      # https://www.w3.org/TR/activitystreams-vocabulary/#dfn-url
+      url: {}
+      # https://www.w3.org/TR/activitystreams-vocabulary/#dfn-content
+      content: {}
+      # https://www.w3.org/TR/activitystreams-vocabulary/#dfn-starttime
+      startTime: {}
+      # https://www.w3.org/TR/activitystreams-vocabulary/#dfn-endtime
+      endTime: {}
+      email: {}
+  Roadmap:
+    tree_root: true
+    attributes:
+      type: {} # "Roadmap"
+      projects:
+        multivalued: true
+        inlined_as_list: true
+        range: Project
+
+# seeAlso:
+# - https://schema.org/Project
+# - https://www.scirp.org/html/4-9301996_52811.htm###
+# - https://www.researchgate.net/publication/311394144_Issue_Tracking_System_based_on_Ontology_and_Semantic_Similarity_Computation

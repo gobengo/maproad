@@ -1,0 +1,11 @@
+@prefix ns1: <https://bengo.is/ns/activity/:> .
+
+[] a ns1:Roadmap ;
+    ns1:projects [ a ns1:Project ;
+            ns1:endTime "2015-01-01 06:00:00-08:00" ;
+            ns1:id "ORCID:1234" ;
+            ns1:name "Going-Away Party for Jim" ;
+            ns1:startTime "2014-12-31 23:00:00-08:00" ;
+            ns1:type "['Project', 'activitystreams:Event']" ] ;
+    ns1:type "Roadmap" .
+
