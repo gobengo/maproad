@@ -448,9 +448,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "planning.model.yaml",
-  "source_file_date": "2022-11-30T00:28:20",
+  "source_file_date": "2022-11-30T01:00:18",
   "source_file_size": 2055,
-  "generation_date": "2022-11-30T00:29:22",
+  "generation_date": "2022-11-30T01:01:36",
   "@type": "SchemaDefinition",
   "@context": [
     "build//jsonld/planning.model.context.jsonld",

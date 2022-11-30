@@ -1,0 +1,14 @@
+#license: https://creativecommons.org/publicdomain/zero/1.0/
+#mapping_set_id: https://bengo.is/ns/planning
+#mapping_tool: https://w3id.org/linkml/
+#creator_id: linkml_user
+#mapping_date: 2022-11-30
+#curie_map: 
+# linkml: https://w3id.org/linkml/
+# schemaorg: https://schema.org/
+# activitystreams: https://www.w3.org/ns/activitystreams#
+# org: https://www.w3.org/TR/vocab-org/#
+# xsd: http://www.w3.org/2001/XMLSchema#
+# rdfs: http://www.w3.org/2000/01/rdf-schema#
+# rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+subject_id	subject_label	predicate_id	predicate_modifier	object_id	object_label	match_type	subject_source	object_source	mapping_tool	confidence	subject_match_field	object_match_field	subject_category	object_category	match_string	comment

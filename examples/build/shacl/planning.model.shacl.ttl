@@ -6,32 +6,7 @@
 <https://bengo.is/ns/planning/:Project> a sh:NodeShape ;
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:description "a human-readable name of the object" ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 1 ;
-            sh:path activitystreams:name ],
-        [ sh:maxCount 1 ;
-            sh:order 6 ;
-            sh:path activitystreams:endTime ],
-        [ sh:maxCount 1 ;
-            sh:order 4 ;
-            sh:path activitystreams:content ],
-        [ sh:maxCount 1 ;
-            sh:order 7 ;
-            sh:path <https://bengo.is/ns/planning/:email> ],
-        [ sh:class <https://bengo.is/ns/planning/:Roadmap> ;
-            sh:nodeKind sh:IRI ;
-            sh:order 8 ;
-            sh:path <https://bengo.is/ns/planning/:roadmaps> ],
-        [ sh:maxCount 1 ;
-            sh:order 5 ;
-            sh:path activitystreams:startTime ],
-        [ sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 3 ;
-            sh:path activitystreams:url ],
-        [ sh:description "uuid" ;
+    sh:property [ sh:description "uuid" ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:order 2 ;
@@ -40,7 +15,32 @@
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:order 0 ;
-            sh:path activitystreams:id ] ;
+            sh:path activitystreams:id ],
+        [ sh:maxCount 1 ;
+            sh:order 7 ;
+            sh:path <https://bengo.is/ns/planning/:email> ],
+        [ sh:class <https://bengo.is/ns/planning/:Roadmap> ;
+            sh:nodeKind sh:IRI ;
+            sh:order 8 ;
+            sh:path <https://bengo.is/ns/planning/:roadmaps> ],
+        [ sh:maxCount 1 ;
+            sh:order 4 ;
+            sh:path activitystreams:content ],
+        [ sh:maxCount 1 ;
+            sh:order 6 ;
+            sh:path activitystreams:endTime ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 3 ;
+            sh:path activitystreams:url ],
+        [ sh:description "a human-readable name of the object" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 1 ;
+            sh:path activitystreams:name ],
+        [ sh:maxCount 1 ;
+            sh:order 5 ;
+            sh:path activitystreams:startTime ] ;
     sh:targetClass <https://bengo.is/ns/planning/:Project> .
 
 <https://bengo.is/ns/planning/:Roadmap> a sh:NodeShape ;
@@ -51,11 +51,6 @@
             sh:minCount 1 ;
             sh:order 1 ;
             sh:path <https://bengo.is/ns/planning/:uuid> ],
-        [ sh:description "unique id" ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 0 ;
-            sh:path activitystreams:id ],
         [ sh:class <https://bengo.is/ns/planning/:Project> ;
             sh:nodeKind sh:IRI ;
             sh:order 3 ;
@@ -64,6 +59,11 @@
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:order 2 ;
-            sh:path activitystreams:name ] ;
+            sh:path activitystreams:name ],
+        [ sh:description "unique id" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 0 ;
+            sh:path activitystreams:id ] ;
     sh:targetClass <https://bengo.is/ns/planning/:Roadmap> .
 

@@ -9,19 +9,22 @@ MAKEFLAGS := --jobs=$(shell nproc)
 default: \
 	examples/build \
 	$(BUILD)/* \
-	$(BUILD)/typescript
+	$(BUILD)/typescript \
+	$(BUILD)/planning.model.sssom.tsv
 
 $(BUILD):
 	@ mkdir -p $(BUILD)
 
+$(BUILD)/planning.model.sssom.tsv: $(BUILD) $(planningModel)
+	gen-sssom $(planningModel) -o $@
+
 $(BUILD)/*: $(BUILD) $(planningModel)
 	gen-project -d build/ planning.model.yaml
-	touch $@
 
 $(BUILD)/typescript: $(BUILD) $(planningModel)
 	gen-typescript $(planningModel) > $(BUILD)/planning.model.ts
 
-examples/build: $(planningModel) $(BUILD)
+examples/build: $(planningModel) $(BUILD) $(BUILD)/*
 	$(MAKE) build/*
 	rm -rf examples/build
 	mkdir -p examples/build
