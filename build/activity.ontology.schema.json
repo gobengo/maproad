@@ -23,14 +23,19 @@
           "type": "string"
         },
         "type": {
-          "type": "string"
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
         },
         "url": {
           "type": "string"
         }
       },
       "required": [
-        "id"
+        "id",
+        "name",
+        "url"
       ],
       "title": "Project",
       "type": "object"
@@ -46,7 +51,10 @@
           "type": "array"
         },
         "type": {
-          "type": "string"
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
         }
       },
       "title": "Roadmap",
@@ -65,7 +73,10 @@
       "type": "array"
     },
     "type": {
-      "type": "string"
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
     }
   },
   "title": "activity",

@@ -1,33 +1,51 @@
+@prefix activitystreams: <https://www.w3.org/ns/activitystreams#> .
 @prefix ns1: <https://bengo.is/ns/activity/:> .
 
 <https://example.com/542e6538-1048-46e3-9eb2-1b0c29e96a97> a ns1:Project ;
     ns1:endTime "2022-02-01" ;
     ns1:name "Theme: Rich Application Support" ;
     ns1:startTime "2022-12-31" ;
-    ns1:type "['Project', 'activitystreams:Event']" .
+    ns1:url "https://github.com/ipfs/roadmap/issues/99" ;
+    activitystreams:type "Project",
+        "activitystreams:Event" .
 
 <https://example.com/754d369a-4d44-4ea8-b944-109e646985b0> a ns1:Project ;
     ns1:endTime "2022-02-01" ;
     ns1:name "Theme: Privacy" ;
     ns1:startTime "2022-12-31" ;
-    ns1:type "['Project', 'activitystreams:Event']" .
+    ns1:url "https://github.com/ipfs/roadmap/issues/97" ;
+    activitystreams:type "Project",
+        "activitystreams:Event" .
 
 <https://example.com/75a7c61b-d4b0-4ab7-a4d1-7ed5449a4de4> a ns1:Project ;
     ns1:endTime "2022-02-01" ;
     ns1:name "Theme: Engineering Excellence" ;
     ns1:startTime "2022-12-31" ;
-    ns1:type "['Project', 'activitystreams:Event']" .
+    ns1:url "https://github.com/ipfs/roadmap/issues/98" ;
+    activitystreams:type "Project",
+        "activitystreams:Event" .
 
 <https://example.com/7df8e6e7-3591-4d7f-8455-896e47fe0eea> a ns1:Project ;
     ns1:endTime "2022-02-01" ;
     ns1:name "Theme: Ubiquitous Clients/Implementations" ;
     ns1:startTime "2022-12-31" ;
-    ns1:type "['Project', 'activitystreams:Event']" .
+    ns1:url "https://github.com/ipfs/roadmap/issues/95" ;
+    activitystreams:type "Project",
+        "activitystreams:Event" .
+
+<https://example.com/ba4d8ae1-6039-4ee8-ae3a-6a4d8b94d0a4> a ns1:Project ;
+    ns1:endTime "2022-02-01" ;
+    ns1:name "Theme: Content Routing Innovation" ;
+    ns1:startTime "2022-12-31" ;
+    ns1:url "https://github.com/ipfs/roadmap/issues/96" ;
+    activitystreams:type "Project",
+        "activitystreams:Event" .
 
 [] a ns1:Roadmap ;
     ns1:projects <https://example.com/542e6538-1048-46e3-9eb2-1b0c29e96a97>,
         <https://example.com/754d369a-4d44-4ea8-b944-109e646985b0>,
         <https://example.com/75a7c61b-d4b0-4ab7-a4d1-7ed5449a4de4>,
-        <https://example.com/7df8e6e7-3591-4d7f-8455-896e47fe0eea> ;
-    ns1:type "Roadmap" .
+        <https://example.com/7df8e6e7-3591-4d7f-8455-896e47fe0eea>,
+        <https://example.com/ba4d8ae1-6039-4ee8-ae3a-6a4d8b94d0a4> ;
+    activitystreams:type "Roadmap" .
 

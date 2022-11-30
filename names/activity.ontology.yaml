@@ -5,21 +5,23 @@ prefixes:
   schemaorg: https://schema.org/
   activitystreams: https://www.w3.org/ns/activitystreams#
   org: https://www.w3.org/TR/vocab-org/#
+  xsd: http://www.w3.org/2001/XMLSchema#
 imports:
   - linkml:types
 default_range: string
 classes:
   # https://www.w3.org/TR/vocab-org/#org:OrganizationalCollaboration
   Project:
+    slots:
+    - id
+    - type
     attributes:
-      type: {} # "Project"
-      # https://www.w3.org/TR/activitystreams-vocabulary/#dfn-id
-      id:
-        identifier: true
       # https://www.w3.org/TR/activitystreams-vocabulary/#dfn-name
-      name: {}
+      name:
+        required: true
       # https://www.w3.org/TR/activitystreams-vocabulary/#dfn-url
-      url: {}
+      url:
+        required: true
       # https://www.w3.org/TR/activitystreams-vocabulary/#dfn-content
       content: {}
       # https://www.w3.org/TR/activitystreams-vocabulary/#dfn-starttime
@@ -29,8 +31,9 @@ classes:
       email: {}
   Roadmap:
     tree_root: true
+    slots:
+    - type
     attributes:
-      type: {} # "Roadmap"
       projects:
         multivalued: true
         inlined_as_list: true
@@ -40,3 +43,13 @@ classes:
 # - https://schema.org/Project
 # - https://www.scirp.org/html/4-9301996_52811.htm###
 # - https://www.researchgate.net/publication/311394144_Issue_Tracking_System_based_on_Ontology_and_Semantic_Similarity_Computation
+
+slots:
+  # https://www.w3.org/TR/activitystreams-vocabulary/#dfn-id
+  id:
+    slot_uri: activitystreams:id
+    identifier: true
+    required: true
+  type:
+    slot_uri: activitystreams:type
+    multivalued: true

@@ -4,10 +4,7 @@ roadmapContainer := containers/roadmap.yaml
 activityOntology := names/activity.ontology.yaml
 $(OBJFILES) : Makefile
 
-default:
-	$(MAKE) $(BUILD)/roadmap.ttl
-	$(MAKE) $(BUILD)/Activity.svg
-	$(MAKE) $(BUILD)/activity.ontology.schema.json
+default: $(BUILD)/roadmap.ttl $(BUILD)/Activity.svg $(BUILD)/activity.ontology.schema.json $(BUILD)/activity.ontology.owl.ttl
 
 # build the roadmap as turtle
 $(BUILD)/roadmap.ttl: $(roadmapContainer) $(activityOntology)
@@ -21,6 +18,9 @@ $(BUILD)/Activity.svg: $(roadmapContainer) $(activityOntology)
 
 $(BUILD)/activity.ontology.schema.json: $(activityOntology)
 	gen-json-schema $? | jq . > $@
+
+$(BUILD)/activity.ontology.owl.ttl: $(activityOntology)
+	gen-owl $(activityOntology) > $@
 
 clean:
 	@ rm -rf $(BUILD)
