@@ -36,13 +36,14 @@ linkml:Objectidentifier IRI
 linkml:Nodeidentifier NONLITERAL
 
 <Project> CLOSED {
-    (  $<Project_tes> (  <uuid> @linkml:String ;
-          activitystreams:type @linkml:String * ;
-          activitystreams:name @linkml:String ;
+    (  $<Project_tes> (  activitystreams:name @linkml:String ;
+          <uuid> @linkml:String ;
+          activitystreams:url @linkml:String ;
           activitystreams:content @linkml:String ? ;
           activitystreams:startTime @linkml:Datetime ? ;
           activitystreams:endTime @linkml:Datetime ? ;
-          <email> @linkml:String ?
+          <email> @linkml:String ? ;
+          <roadmaps> @<Roadmap> *
        ) ;
        rdf:type [ <Project> ]
     )
@@ -50,10 +51,10 @@ linkml:Nodeidentifier NONLITERAL
 
 <Roadmap> CLOSED {
     (  $<Roadmap_tes> (  <uuid> @linkml:String ;
-          activitystreams:type @linkml:String * ;
+          activitystreams:name @linkml:String ;
           <projects> @<Project> *
        ) ;
-       rdf:type [ <Roadmap> ] ?
+       rdf:type [ <Roadmap> ]
     )
 }
 

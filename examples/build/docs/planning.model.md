@@ -1,5 +1,5 @@
 
-# activity
+# planning
 
 
 **metamodel version:** 1.7.0
@@ -21,14 +21,14 @@
 ### Slots
 
  * [id](id.md) - unique id
+ * [name](name.md) - a human-readable name of the object
  * [➞content](project__content.md)
  * [➞email](project__email.md)
  * [➞endTime](project__endTime.md)
- * [➞name](project__name.md) - a human-readable name of the object
+ * [➞roadmaps](project__roadmaps.md)
  * [➞startTime](project__startTime.md)
  * [➞url](project__url.md)
  * [➞projects](roadmap__projects.md)
- * [type](type.md)
  * [uuid](uuid.md) - uuid
 
 ### Enums

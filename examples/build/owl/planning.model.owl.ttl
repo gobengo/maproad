@@ -8,15 +8,15 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://bengo.is/ns/planning> a owl:Ontology ;
-    rdfs:label "activity" ;
+    rdfs:label "planning" ;
     IAO:0000700 <https://bengo.is/ns/planning/Project>,
         <https://bengo.is/ns/planning/Roadmap> ;
     dcterms:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
-    linkml:generation_date "2022-11-30T00:02:44" ;
+    linkml:generation_date "2022-11-30T00:29:24" ;
     linkml:metamodel_version "1.7.0" ;
     linkml:source_file "planning.model.yaml" ;
-    linkml:source_file_date "2022-11-29T23:50:48" ;
-    linkml:source_file_size 2031 .
+    linkml:source_file_date "2022-11-30T00:28:20" ;
+    linkml:source_file_size 2055 .
 
 linkml:SubsetDefinition a owl:Class ;
     rdfs:label "subset_definition" .
@@ -26,20 +26,6 @@ linkml:TypeDefinition a owl:Class ;
 
 linkml:topValue a owl:DatatypeProperty ;
     rdfs:label "value" .
-
-<https://bengo.is/ns/planning/Roadmap> a owl:Class,
-        linkml:ClassDefinition ;
-    rdfs:label "Roadmap" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty activitystreams:type ],
-        [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://bengo.is/ns/planning/uuid> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://bengo.is/ns/planning/Project> ;
-            owl:onProperty <https://bengo.is/ns/planning/projects> ] .
 
 <https://bengo.is/ns/planning/email> a owl:ObjectProperty,
         linkml:SlotDefinition ;
@@ -51,12 +37,10 @@ linkml:topValue a owl:DatatypeProperty ;
     rdfs:label "projects" ;
     rdfs:range <https://bengo.is/ns/planning/Project> .
 
-activitystreams:id a owl:ObjectProperty,
+<https://bengo.is/ns/planning/roadmaps> a owl:ObjectProperty,
         linkml:SlotDefinition ;
-    rdfs:label "id" ;
-    rdfs:range linkml:String ;
-    skos:definition "unique id" ;
-    skos:exactMatch activitystreams:id .
+    rdfs:label "roadmaps" ;
+    rdfs:range <https://bengo.is/ns/planning/Roadmap> .
 
 <https://bengo.is/ns/planning/uuid> a owl:ObjectProperty,
         linkml:SlotDefinition ;
@@ -79,13 +63,6 @@ activitystreams:endTime a owl:ObjectProperty,
     rdfs:range linkml:Datetime ;
     skos:exactMatch activitystreams:endTime .
 
-activitystreams:name a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "name" ;
-    rdfs:range linkml:String ;
-    skos:definition "a human-readable name of the object" ;
-    skos:exactMatch activitystreams:name .
-
 activitystreams:startTime a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "startTime" ;
@@ -102,20 +79,32 @@ activitystreams:url a owl:ObjectProperty,
         linkml:ClassDefinition ;
     rdfs:label "Project" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty activitystreams:name ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://bengo.is/ns/planning/Roadmap> ;
+            owl:onProperty <https://bengo.is/ns/planning/roadmaps> ],
+        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty activitystreams:content ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty activitystreams:type ],
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Datetime ;
+            owl:onProperty activitystreams:endTime ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Datetime ;
+            owl:onProperty activitystreams:startTime ],
         [ a owl:Restriction ;
             owl:onClass linkml:String ;
             owl:onProperty <https://bengo.is/ns/planning/uuid> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Datetime ;
-            owl:onProperty activitystreams:endTime ],
+            owl:onClass linkml:String ;
+            owl:onProperty activitystreams:id ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass linkml:String ;
             owl:onProperty activitystreams:url ;
@@ -123,21 +112,40 @@ activitystreams:url a owl:ObjectProperty,
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty <https://bengo.is/ns/planning/email> ],
-        [ a owl:Restriction ;
+            owl:onProperty <https://bengo.is/ns/planning/email> ] .
+
+<https://bengo.is/ns/planning/Roadmap> a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Roadmap" ;
+    rdfs:subClassOf [ a owl:Restriction ;
             owl:onClass linkml:String ;
             owl:onProperty activitystreams:name ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Datetime ;
-            owl:onProperty activitystreams:startTime ] .
+            owl:allValuesFrom <https://bengo.is/ns/planning/Project> ;
+            owl:onProperty <https://bengo.is/ns/planning/projects> ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://bengo.is/ns/planning/uuid> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty activitystreams:id ;
+            owl:qualifiedCardinality 1 ] .
 
-activitystreams:type a owl:ObjectProperty,
+activitystreams:id a owl:ObjectProperty,
         linkml:SlotDefinition ;
-    rdfs:label "type" ;
+    rdfs:label "id" ;
     rdfs:range linkml:String ;
-    skos:exactMatch activitystreams:type .
+    skos:definition "unique id" ;
+    skos:exactMatch activitystreams:id .
+
+activitystreams:name a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "name" ;
+    rdfs:range linkml:String ;
+    skos:definition "a human-readable name of the object" ;
+    skos:exactMatch activitystreams:name .
 
 linkml:SlotDefinition a owl:Class ;
     rdfs:label "slot_definition" .

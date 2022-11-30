@@ -4,7 +4,7 @@
 
 a human-readable name of the object
 
-URI: [https://bengo.is/ns/planning/project__name](https://bengo.is/ns/planning/project__name)
+URI: [https://bengo.is/ns/planning/name](https://bengo.is/ns/planning/name)
 
 
 ## Domain and Range
@@ -20,6 +20,7 @@ None &#8594;  <sub>1..1</sub> [String](types/String.md)
 ## Used by
 
  * [Project](Project.md)
+ * [Roadmap](Roadmap.md)
 
 ## Other properties
 

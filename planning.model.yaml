@@ -1,5 +1,5 @@
 id: https://bengo.is/ns/planning
-name: activity
+name: planning
 prefixes:
   linkml: https://w3id.org/linkml/
   schemaorg: https://schema.org/
@@ -15,19 +15,14 @@ classes:
   # https://www.w3.org/TR/vocab-org/#org:OrganizationalCollaboration
   Project:
     slots:
+    - id
+    - name
     - uuid
-    - type
     attributes:
-      # https://www.w3.org/TR/activitystreams-vocabulary/#dfn-name
-      name:
-        slot_uri: activitystreams:name
-        description: a human-readable name of the object
-        required: true
       # https://www.w3.org/TR/activitystreams-vocabulary/#dfn-url
       url:
         required: true
         slot_uri: activitystreams:url
-        identifier: true
       # https://www.w3.org/TR/activitystreams-vocabulary/#dfn-content
       content:
         slot_uri: activitystreams:content
@@ -40,11 +35,16 @@ classes:
         slot_uri: activitystreams:endTime
         range: datetime
       email: {}
+      roadmaps:
+        multivalued: true
+        range: Roadmap
+        inlined_as_list: true
   Roadmap:
     tree_root: true
     slots:
+    - id
     - uuid
-    - type
+    - name
     attributes:
       projects:
         multivalued: true
@@ -62,9 +62,12 @@ slots:
     description: unique id
     slot_uri: activitystreams:id
     required: true
+    identifier: true
   uuid:
     description: uuid
     required: true
-  type:
-    slot_uri: activitystreams:type
-    multivalued: true
+  # https://www.w3.org/TR/activitystreams-vocabulary/#dfn-name
+  name:
+    slot_uri: activitystreams:name
+    description: a human-readable name of the object
+    required: true

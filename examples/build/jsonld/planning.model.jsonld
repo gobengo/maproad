@@ -1,5 +1,5 @@
 {
-  "name": "activity",
+  "name": "planning",
   "id": "https://bengo.is/ns/planning",
   "imports": [
     "linkml:types"
@@ -218,6 +218,12 @@
         "https://www.w3.org/ns/activitystreams#id"
       ],
       "slot_uri": "https://www.w3.org/ns/activitystreams#id",
+      "identifier": true,
+      "owner": "Roadmap",
+      "domain_of": [
+        "Project",
+        "Roadmap"
+      ],
       "range": "string",
       "required": true,
       "@type": "SlotDefinition"
@@ -238,34 +244,18 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "type",
-      "definition_uri": "https://bengo.is/ns/planning/type",
-      "from_schema": "https://bengo.is/ns/planning",
-      "mappings": [
-        "https://www.w3.org/ns/activitystreams#type"
-      ],
-      "slot_uri": "https://www.w3.org/ns/activitystreams#type",
-      "multivalued": true,
-      "owner": "Roadmap",
-      "domain_of": [
-        "Project",
-        "Roadmap"
-      ],
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "project__name",
+      "name": "name",
+      "definition_uri": "https://bengo.is/ns/planning/name",
       "description": "a human-readable name of the object",
       "from_schema": "https://bengo.is/ns/planning",
       "mappings": [
         "https://www.w3.org/ns/activitystreams#name"
       ],
       "slot_uri": "https://www.w3.org/ns/activitystreams#name",
-      "alias": "name",
-      "owner": "Project",
+      "owner": "Roadmap",
       "domain_of": [
-        "Project"
+        "Project",
+        "Roadmap"
       ],
       "range": "string",
       "required": true,
@@ -278,7 +268,6 @@
         "https://www.w3.org/ns/activitystreams#url"
       ],
       "slot_uri": "https://www.w3.org/ns/activitystreams#url",
-      "identifier": true,
       "alias": "url",
       "owner": "Project",
       "domain_of": [
@@ -346,6 +335,21 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "project__roadmaps",
+      "from_schema": "https://bengo.is/ns/planning",
+      "slot_uri": "https://bengo.is/ns/planning/roadmaps",
+      "multivalued": true,
+      "alias": "roadmaps",
+      "owner": "Project",
+      "domain_of": [
+        "Project"
+      ],
+      "range": "Roadmap",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "roadmap__projects",
       "from_schema": "https://bengo.is/ns/planning",
       "slot_uri": "https://bengo.is/ns/planning/projects",
@@ -367,28 +371,21 @@
       "definition_uri": "https://bengo.is/ns/planning/Project",
       "from_schema": "https://bengo.is/ns/planning",
       "slots": [
+        "id",
+        "name",
         "uuid",
-        "type",
-        "project__name",
         "project__url",
         "project__content",
         "project__startTime",
         "project__endTime",
-        "project__email"
+        "project__email",
+        "project__roadmaps"
       ],
       "slot_usage": {},
       "attributes": [
         {
-          "name": "name",
-          "description": "a human-readable name of the object",
-          "slot_uri": "activitystreams:name",
-          "required": true,
-          "@type": "SlotDefinition"
-        },
-        {
           "name": "url",
           "slot_uri": "activitystreams:url",
-          "identifier": true,
           "required": true,
           "@type": "SlotDefinition"
         },
@@ -412,6 +409,13 @@
         {
           "name": "email",
           "@type": "SlotDefinition"
+        },
+        {
+          "name": "roadmaps",
+          "multivalued": true,
+          "range": "Roadmap",
+          "inlined_as_list": true,
+          "@type": "SlotDefinition"
         }
       ],
       "class_uri": "https://bengo.is/ns/planning/Project",
@@ -422,8 +426,9 @@
       "definition_uri": "https://bengo.is/ns/planning/Roadmap",
       "from_schema": "https://bengo.is/ns/planning",
       "slots": [
+        "id",
         "uuid",
-        "type",
+        "name",
         "roadmap__projects"
       ],
       "slot_usage": {},
@@ -443,9 +448,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "planning.model.yaml",
-  "source_file_date": "2022-11-29T23:50:48",
-  "source_file_size": 2031,
-  "generation_date": "2022-11-30T00:02:42",
+  "source_file_date": "2022-11-30T00:28:20",
+  "source_file_size": 2055,
+  "generation_date": "2022-11-30T00:29:22",
   "@type": "SchemaDefinition",
   "@context": [
     "build//jsonld/planning.model.context.jsonld",

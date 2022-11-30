@@ -1,19 +1,21 @@
 type Project
   {
-    uuid: String!
-    type: [String]
+    id: String!
     name: String!
+    uuid: String!
     url: String!
     content: String
     startTime: Datetime
     endTime: Datetime
     email: String
+    roadmaps: [Roadmap]
   }
 
 type Roadmap
   {
+    id: String!
     uuid: String!
-    type: [String]
+    name: String!
     projects: [Project]
   }
 

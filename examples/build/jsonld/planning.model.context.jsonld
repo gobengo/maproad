@@ -1,17 +1,18 @@
 {
-   "_comments": "Auto generated from planning.model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-11-30T00:02:42\n    Schema: activity\n    metamodel version: 1.7.0\n    model version: None\n    \n    id: https://bengo.is/ns/planning\n    description: \n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from planning.model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-11-30T00:29:22\n    Schema: planning\n    metamodel version: 1.7.0\n    model version: None\n    \n    id: https://bengo.is/ns/planning\n    description: \n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
-      "activity": "https://bengo.is/ns/planning/",
       "activitystreams": "https://www.w3.org/ns/activitystreams#",
       "linkml": "https://w3id.org/linkml/",
       "org": "https://www.w3.org/TR/vocab-org/#",
+      "planning": "https://bengo.is/ns/planning/",
       "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
       "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
       "schemaorg": "https://schema.org/",
       "xsd": "http://www.w3.org/2001/XMLSchema#",
       "@vocab": "https://bengo.is/ns/planning/",
-      "id": {
-         "@id": "activitystreams:id"
+      "id": "@id",
+      "name": {
+         "@id": "activitystreams:name"
       },
       "content": {
          "@id": "activitystreams:content"
@@ -23,20 +24,20 @@
          "@type": "xsd:dateTime",
          "@id": "activitystreams:endTime"
       },
-      "name": {
-         "@id": "activitystreams:name"
+      "roadmaps": {
+         "@type": "@id",
+         "@id": "https://bengo.is/ns/planning/roadmaps"
       },
       "startTime": {
          "@type": "xsd:dateTime",
          "@id": "activitystreams:startTime"
       },
-      "url": "@id",
+      "url": {
+         "@id": "activitystreams:url"
+      },
       "projects": {
          "@type": "@id",
          "@id": "https://bengo.is/ns/planning/projects"
-      },
-      "type": {
-         "@id": "activitystreams:type"
       },
       "uuid": {
          "@id": "https://bengo.is/ns/planning/uuid"

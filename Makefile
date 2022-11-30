@@ -8,7 +8,8 @@ MAKEFLAGS := --jobs=$(shell nproc)
 
 default: \
 	examples/build \
-	$(BUILD)/*
+	$(BUILD)/* \
+	$(BUILD)/typescript
 
 $(BUILD):
 	@ mkdir -p $(BUILD)
@@ -16,6 +17,9 @@ $(BUILD):
 $(BUILD)/*: $(BUILD) $(planningModel)
 	gen-project -d build/ planning.model.yaml
 	touch $@
+
+$(BUILD)/typescript: $(BUILD) $(planningModel)
+	gen-typescript $(planningModel) > $(BUILD)/planning.model.ts
 
 examples/build: $(planningModel) $(BUILD)
 	$(MAKE) build/*
