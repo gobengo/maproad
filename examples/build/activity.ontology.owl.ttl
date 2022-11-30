@@ -12,7 +12,7 @@
     IAO:0000700 <https://bengo.is/ns/activity/Project>,
         <https://bengo.is/ns/activity/Roadmap> ;
     dcterms:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
-    linkml:generation_date "2022-11-29T23:30:32" ;
+    linkml:generation_date "2022-11-29T23:47:32" ;
     linkml:metamodel_version "1.7.0" ;
     linkml:source_file "activity.ontology.yaml" ;
     linkml:source_file_date "2022-11-29T23:30:07" ;
@@ -34,12 +34,12 @@ linkml:topValue a owl:DatatypeProperty ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty activitystreams:type ],
         [ a owl:Restriction ;
+            owl:allValuesFrom <https://bengo.is/ns/activity/Project> ;
+            owl:onProperty <https://bengo.is/ns/activity/projects> ],
+        [ a owl:Restriction ;
             owl:onClass linkml:String ;
             owl:onProperty <https://bengo.is/ns/activity/uuid> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://bengo.is/ns/activity/Project> ;
-            owl:onProperty <https://bengo.is/ns/activity/projects> ] .
+            owl:qualifiedCardinality 1 ] .
 
 <https://bengo.is/ns/activity/email> a owl:ObjectProperty,
         linkml:SlotDefinition ;
@@ -103,35 +103,35 @@ activitystreams:url a owl:ObjectProperty,
     rdfs:label "Project" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onClass linkml:String ;
-            owl:onProperty <https://bengo.is/ns/activity/uuid> ;
+            owl:onProperty activitystreams:url ;
             owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Datetime ;
+            owl:onProperty activitystreams:startTime ],
         [ a owl:Restriction ;
             owl:onClass linkml:String ;
             owl:onProperty activitystreams:name ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty activitystreams:url ;
-            owl:qualifiedCardinality 1 ],
+            owl:onProperty activitystreams:content ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty activitystreams:type ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Datetime ;
             owl:onProperty activitystreams:endTime ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Datetime ;
-            owl:onProperty activitystreams:startTime ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty activitystreams:type ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty activitystreams:content ],
+            owl:onProperty <https://bengo.is/ns/activity/email> ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty <https://bengo.is/ns/activity/email> ] .
+            owl:onProperty <https://bengo.is/ns/activity/uuid> ;
+            owl:qualifiedCardinality 1 ] .
 
 activitystreams:type a owl:ObjectProperty,
         linkml:SlotDefinition ;

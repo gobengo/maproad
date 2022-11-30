@@ -16,7 +16,10 @@ default: \
 	$(BUILD)/activity.ontology.schema.json \
 	$(BUILD)/markdown/* \
 	$(BUILD)/activity.ontology.owl.ttl \
-	$(BUILD)/activity.ontology.jsonld
+	$(BUILD)/activity.ontology.jsonld \
+	$(BUILD)/activity.py \
+	$(BUILD)/activity.ontology.shex \
+	$(BUILD)/activity.ontology.shacl.ttl
 
 $(BUILD):
 	@ mkdir -p $(BUILD)
@@ -50,6 +53,18 @@ $(BUILD)/activity.ontology.owl.ttl: $(BUILD) $(activityOntology)
 
 $(BUILD)/activity.ontology.jsonld: $(BUILD) $(activityOntology)
 	gen-jsonld-context $(activityOntology) > $@
+
+$(BUILD)/activity.ontology.shex: $(BUILD) $(activityOntology)
+	gen-shex $(activityOntology) > $@
+
+$(BUILD)/activity.ontology.shacl.ttl: $(BUILD) $(activityOntology)
+	gen-shacl $(activityOntology) > $@
+
+$(BUILD)/doc: $(BUILD) $(activityOntology)
+	gen-doc -d $@ $(activityOntology)
+
+$(BUILD)/activity.py: $(BUILD) $(activityOntology)
+	gen-python $(activityOntology) > $@
 
 $(BUILD)/markdown/%: $(activityOntology)
 	gen-markdown -i -d $(BUILD)/markdown/ $(activityOntology)
