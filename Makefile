@@ -1,7 +1,7 @@
 BUILD=build
 examples := $(wildcard examples/*.yaml)
-roadmapContainer := ipfs.roadmap.yaml
-activityOntology := planning.model.yaml
+roadmap := ipfs.roadmap.yaml
+planningModel := planning.model.yaml
 $(OBJFILES) : Makefile
 
 MAKEFLAGS := --jobs=$(shell nproc)
@@ -13,63 +13,63 @@ default: \
 	$(BUILD)/roadmap.yaml \
 	$(BUILD)/roadmap.json \
 	$(BUILD)/Activity.svg \
-	$(BUILD)/activity.ontology.schema.json \
+	$(BUILD)/planning.model.schema.json \
 	$(BUILD)/markdown/* \
-	$(BUILD)/activity.ontology.owl.ttl \
-	$(BUILD)/activity.ontology.jsonld \
-	$(BUILD)/activity.py \
-	$(BUILD)/activity.ontology.shex \
-	$(BUILD)/activity.ontology.shacl.ttl
+	$(BUILD)/planning.model.owl.ttl \
+	$(BUILD)/planning.model.jsonld \
+	$(BUILD)/planning.py \
+	$(BUILD)/planning.model.shex \
+	$(BUILD)/planning.model.shacl.ttl
 
 $(BUILD):
 	@ mkdir -p $(BUILD)
 
 # build the roadmap as turtle
-$(BUILD)/roadmap.rdf: $(BUILD) $(roadmapContainer) $(activityOntology)
-	linkml-convert -t rdf -s $(activityOntology) $(roadmapContainer) -o $@
+$(BUILD)/roadmap.rdf: $(BUILD) $(roadmap) $(planningModel)
+	linkml-convert -t rdf -s $(planningModel) $(roadmap) -o $@
 
 # build the roadmap as turtle
-$(BUILD)/roadmap.ttl: $(BUILD) $(roadmapContainer) $(activityOntology)
-	linkml-convert -t ttl -s $(activityOntology) $(roadmapContainer) -o $@
+$(BUILD)/roadmap.ttl: $(BUILD) $(roadmap) $(planningModel)
+	linkml-convert -t ttl -s $(planningModel) $(roadmap) -o $@
 
-$(BUILD)/roadmap.yaml: $(BUILD) $(roadmapContainer) $(activityOntology)
-	linkml-convert -t yaml -s $(activityOntology) $(roadmapContainer) -o $@
+$(BUILD)/roadmap.yaml: $(BUILD) $(roadmap) $(planningModel)
+	linkml-convert -t yaml -s $(planningModel) $(roadmap) -o $@
 
-$(BUILD)/roadmap.json: $(BUILD) $(roadmapContainer) $(activityOntology)
-	linkml-convert -t json -s $(activityOntology) $(roadmapContainer) -o $@
+$(BUILD)/roadmap.json: $(BUILD) $(roadmap) $(planningModel)
+	linkml-convert -t json -s $(planningModel) $(roadmap) -o $@
 
-$(BUILD)/roadmap.jsonld: $(BUILD) $(roadmapContainer) $(activityOntology)
-	linkml-convert -t json-ld -s $(activityOntology) $(roadmapContainer) -o $@
+$(BUILD)/roadmap.jsonld: $(BUILD) $(roadmap) $(planningModel)
+	linkml-convert -t json-ld -s $(planningModel) $(roadmap) -o $@
 
 # svg diagram of activity ontology
-$(BUILD)/Activity.svg: $(BUILD) $(activityOntology)
-	gen-yuml $(activityOntology) -f svg -d build/   
+$(BUILD)/Activity.svg: $(BUILD) $(planningModel)
+	gen-yuml $(planningModel) -f svg -d build/   
 
-$(BUILD)/activity.ontology.schema.json: $(BUILD) $(activityOntology)
-	gen-json-schema $(activityOntology) | jq . > $@
+$(BUILD)/planning.model.schema.json: $(BUILD) $(planningModel)
+	gen-json-schema $(planningModel) | jq . > $@
 
-$(BUILD)/activity.ontology.owl.ttl: $(BUILD) $(activityOntology)
-	gen-owl $(activityOntology) > $@
+$(BUILD)/planning.model.owl.ttl: $(BUILD) $(planningModel)
+	gen-owl $(planningModel) > $@
 
-$(BUILD)/activity.ontology.jsonld: $(BUILD) $(activityOntology)
-	gen-jsonld-context $(activityOntology) > $@
+$(BUILD)/planning.model.jsonld: $(BUILD) $(planningModel)
+	gen-jsonld-context $(planningModel) > $@
 
-$(BUILD)/activity.ontology.shex: $(BUILD) $(activityOntology)
-	gen-shex $(activityOntology) > $@
+$(BUILD)/planning.model.shex: $(BUILD) $(planningModel)
+	gen-shex $(planningModel) > $@
 
-$(BUILD)/activity.ontology.shacl.ttl: $(BUILD) $(activityOntology)
-	gen-shacl $(activityOntology) > $@
+$(BUILD)/planning.model.shacl.ttl: $(BUILD) $(planningModel)
+	gen-shacl $(planningModel) > $@
 
-$(BUILD)/doc: $(BUILD) $(activityOntology)
-	gen-doc -d $@ $(activityOntology)
+$(BUILD)/doc: $(BUILD) $(planningModel)
+	gen-doc -d $@ $(planningModel)
 
-$(BUILD)/activity.py: $(BUILD) $(activityOntology)
-	gen-python $(activityOntology) > $@
+$(BUILD)/planning.py: $(BUILD) $(planningModel)
+	gen-python $(planningModel) > $@
 
-$(BUILD)/markdown/%: $(activityOntology)
-	gen-markdown -i -d $(BUILD)/markdown/ $(activityOntology)
+$(BUILD)/markdown/%: $(planningModel)
+	gen-markdown -i -d $(BUILD)/markdown/ $(planningModel)
 
-examples/build: $(activityOntology) $(BUILD)
+examples/build: $(planningModel) $(BUILD)
 	$(MAKE) build/*
 	rm -rf examples/build
 	mkdir -p examples/build
