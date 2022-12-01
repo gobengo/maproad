@@ -8,23 +8,26 @@ MAKEFLAGS := --jobs=$(shell nproc)
 
 default: \
 	examples/build \
-	$(BUILD)/* \
-	$(BUILD)/typescript \
-	$(BUILD)/planning.model.sssom.tsv
+	$(BUILD)/planning/* \
+	$(BUILD)/planning/typescript \
+	$(BUILD)/planning/planning.model.sssom.tsv
 
 $(BUILD):
 	@ mkdir -p $(BUILD)
 
-$(BUILD)/planning.model.sssom.tsv: $(BUILD) $(planningModel)
+$(BUILD)/planning:
+	@ mkdir -p $(BUILD)/planning
+
+$(BUILD)/planning/planning.model.sssom.tsv: $(BUILD) $(planningModel)
 	gen-sssom $(planningModel) -o $@
 
-$(BUILD)/*: $(BUILD) $(planningModel)
-	gen-project -d build/ planning.model.yaml
+$(BUILD)/planning/*: $(BUILD)/planning $(planningModel)
+	gen-project -d build/planning/ planning.model.yaml
 
-$(BUILD)/typescript: $(BUILD) $(planningModel)
-	gen-typescript $(planningModel) > $(BUILD)/planning.model.ts
+$(BUILD)/planning/typescript: $(BUILD)/planning $(planningModel)
+	gen-typescript $(planningModel) > $(BUILD)/planning/planning.model.ts
 
-examples/build: $(planningModel) $(BUILD) $(BUILD)/*
+examples/build: $(planningModel) $(BUILD)/planning/*
 	$(MAKE) build/*
 	rm -rf examples/build
 	mkdir -p examples/build

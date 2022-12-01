@@ -448,12 +448,12 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "planning.model.yaml",
-  "source_file_date": "2022-11-30T01:00:18",
-  "source_file_size": 2055,
-  "generation_date": "2022-11-30T01:01:36",
+  "source_file_date": "2022-12-01T08:17:32",
+  "source_file_size": 2056,
+  "generation_date": "2022-12-01T08:21:23",
   "@type": "SchemaDefinition",
   "@context": [
-    "build//jsonld/planning.model.context.jsonld",
+    "build/planning//jsonld/planning.model.context.jsonld",
     "https://w3id.org/linkml/types.context.jsonld",
     {
       "@base": "https://bengo.is/ns/planning/"

@@ -1,5 +1,5 @@
 # Auto generated from planning.model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-11-30T01:01:40
+# Generation date: 2022-12-01T08:21:26
 # Schema: planning
 #
 # id: https://bengo.is/ns/planning

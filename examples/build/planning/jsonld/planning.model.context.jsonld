@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from planning.model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-11-30T01:01:36\n    Schema: planning\n    metamodel version: 1.7.0\n    model version: None\n    \n    id: https://bengo.is/ns/planning\n    description: \n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from planning.model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-12-01T08:21:22\n    Schema: planning\n    metamodel version: 1.7.0\n    model version: None\n    \n    id: https://bengo.is/ns/planning\n    description: \n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
       "activitystreams": "https://www.w3.org/ns/activitystreams#",
       "linkml": "https://w3id.org/linkml/",

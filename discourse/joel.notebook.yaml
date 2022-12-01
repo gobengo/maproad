@@ -1,0 +1,16 @@
+type: Notebook
+name: Joel's Notebook
+url: https://publish.obsidian.md/joelchan-notes/README
+id: https://discourse.space/uuid/a1288229-521f-4403-a78b-8b2dd8f7e045
+questions:
+- type: Question
+  name: How can we best bridge private vs. public knowledge
+  url: https://publish.obsidian.md/joelchan-notes/discourse-graph/questions/QUE+-+How+can+we+best+bridge+private+vs.+public+knowledge
+  id: https://discourse.space/uuid/20415f45-358a-41a3-8ea0-e73cb22e3ddf
+claims:
+- type: Claim
+  id: https://discourse.space/uuid/75a7c61b-d4b0-4ab7-a4d1-7ed5449a4de4
+  name: It is possible to benefit from receiving intermediate sensemaking outputs from others, particularly if those outputs have been iterated on
+  url: https://publish.obsidian.md/joelchan-notes/discourse-graph/claims/CLM+-+It+is+possible+to+benefit+from+receiving+intermediate+sensemaking+outputs+from+others%2C+particularly+if+those+outputs+have+been+iterated+on
+  informs:
+  - https://discourse.space/uuid/20415f45-358a-41a3-8ea0-e73cb22e3ddf

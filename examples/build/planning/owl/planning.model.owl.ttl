@@ -12,11 +12,11 @@
     IAO:0000700 <https://bengo.is/ns/planning/Project>,
         <https://bengo.is/ns/planning/Roadmap> ;
     dcterms:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
-    linkml:generation_date "2022-11-30T01:01:38" ;
+    linkml:generation_date "2022-12-01T08:21:25" ;
     linkml:metamodel_version "1.7.0" ;
     linkml:source_file "planning.model.yaml" ;
-    linkml:source_file_date "2022-11-30T01:00:18" ;
-    linkml:source_file_size 2055 .
+    linkml:source_file_date "2022-12-01T08:17:32" ;
+    linkml:source_file_size 2056 .
 
 linkml:SubsetDefinition a owl:Class ;
     rdfs:label "subset_definition" .
@@ -84,54 +84,54 @@ activitystreams:url a owl:ObjectProperty,
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass linkml:String ;
-            owl:onProperty activitystreams:url ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass linkml:String ;
             owl:onProperty <https://bengo.is/ns/planning/uuid> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass linkml:String ;
             owl:onProperty activitystreams:name ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty activitystreams:content ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty activitystreams:url ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Datetime ;
             owl:onProperty activitystreams:endTime ],
         [ a owl:Restriction ;
-            owl:allValuesFrom <https://bengo.is/ns/planning/Roadmap> ;
-            owl:onProperty <https://bengo.is/ns/planning/roadmaps> ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty <https://bengo.is/ns/planning/email> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty activitystreams:content ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Datetime ;
-            owl:onProperty activitystreams:startTime ] .
+            owl:onProperty activitystreams:startTime ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://bengo.is/ns/planning/Roadmap> ;
+            owl:onProperty <https://bengo.is/ns/planning/roadmaps> ] .
 
 <https://bengo.is/ns/planning/Roadmap> a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Roadmap" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onClass linkml:String ;
-            owl:onProperty <https://bengo.is/ns/planning/uuid> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://bengo.is/ns/planning/Project> ;
-            owl:onProperty <https://bengo.is/ns/planning/projects> ],
-        [ a owl:Restriction ;
-            owl:onClass linkml:String ;
             owl:onProperty activitystreams:id ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass linkml:String ;
             owl:onProperty activitystreams:name ;
-            owl:qualifiedCardinality 1 ] .
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://bengo.is/ns/planning/uuid> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://bengo.is/ns/planning/Project> ;
+            owl:onProperty <https://bengo.is/ns/planning/projects> ] .
 
 activitystreams:id a owl:ObjectProperty,
         linkml:SlotDefinition ;

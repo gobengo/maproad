@@ -1,55 +1,65 @@
-id: https://bengo.is/ns/planning
-name: planning
+id: https://bengo.is/ns/discourse
+name: discourse
 prefixes:
   linkml: https://w3id.org/linkml/
   schemaorg: https://schema.org/
-  activitystreams: https://www.w3.org/ns/activitystreams#
+  as: https://www.w3.org/ns/activitystreams#
   org: https://www.w3.org/TR/vocab-org/#
   xsd: http://www.w3.org/2001/XMLSchema#
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  dg: https://oasislab.pubpub.org/pub/54t0y9mk#
 imports:
   - linkml:types
 default_range: string
 classes:
-  # https://www.w3.org/TR/vocab-org/#org:OrganizationalCollaboration
-  Project:
-    slots:
-    - id
-    - name
-    - uuid
+  # https://oasislab.pubpub.org/pub/54t0y9mk#question-notes
+  Question:
+    class_uri: dg:Question
     attributes:
-      # https://www.w3.org/TR/activitystreams-vocabulary/#dfn-url
-      url:
-        required: true
-        slot_uri: activitystreams:url
-      # https://www.w3.org/TR/activitystreams-vocabulary/#dfn-content
-      content:
-        slot_uri: activitystreams:content
-      # https://www.w3.org/TR/activitystreams-vocabulary/#dfn-starttime
-      startTime:
-        slot_uri: activitystreams:startTime
-        range: datetime
-      # https://www.w3.org/TR/activitystreams-vocabulary/#dfn-endtime
-      endTime:
-        slot_uri: activitystreams:endTime
-        range: datetime
-      email: {}
-      roadmaps:
+      type:
+        slot_uri: as:type
+        range: string
+        pattern: "^Question$"
+    slots:
+    - name
+    - id
+    - url
+  Claim:
+    class_uri: dg:Claim
+    attributes:
+      type:
+        slot_uri: as:type
+        range: string
+        pattern: "^Claim$"
+      informs:
+        range: Question
         multivalued: true
-        range: Roadmap
-        inlined_as_list: true
-  Roadmap:
+        inlined: false
+        slot_uri: dg:informs
+    slots:
+    - name
+    - id
+    - url
+  Notebook:
     tree_root: true
     slots:
     - id
-    - uuid
     - name
+    - url
     attributes:
-      projects:
+      type:
+        slot_uri: as:type
+        range: string
+        pattern: "^Notebook$"
+      questions:
         multivalued: true
         inlined_as_list: true
-        range: Project
+        range: Question
+      claims:
+        multivalued: true
+        inlined_as_list: true
+        range: Claim
 
 # seeAlso:
 # - https://schema.org/Project
@@ -60,15 +70,18 @@ slots:
   # https://www.w3.org/TR/activitystreams-vocabulary/#dfn-id
   id:
     description: unique id
-    slot_uri: activitystreams:id
+    slot_uri: as:id
     required: true
     identifier: true
+  url:
+    slot_uri: as:url
+    range: string
   uuid:
     description: uuid
     required: true
 # https://www.w3.org/TR/activitystreams-vocabulary/#dfn-name
   name:
-    slot_uri: activitystreams:name
+    slot_uri: as:name
     description: a human-readable name of the object
     required: true
   
